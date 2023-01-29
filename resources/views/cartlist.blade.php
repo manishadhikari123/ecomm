@@ -6,6 +6,9 @@
     <div class="col-sm-10">
         <div class="trending-wrapper">
             <h3>Result for Products</h3>
+            
+            <a href="ordernow" class="btn btn-success">Order Now</a>
+            <br><br>
 
             @foreach($products as $item)
                 <div class="row searched-item cart-list-divider">
@@ -17,9 +20,9 @@
                         </a>
                     </div>
                     <div class="col-sm-6">
-                            <div class="">
+                            <div class="container">
                                 <h3>{{$item->name}}</h3>
-                                <h3>{{$item->description}}</h3>
+                                <h3>Rs {{$item->price}}</h3>
                             </div>
                     
                     </div>
@@ -31,9 +34,10 @@
             @endforeach
 
         </div>
+
     </div>
-    
-    
+
+
 
 </div>
 </div>

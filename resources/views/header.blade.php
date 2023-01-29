@@ -1,7 +1,7 @@
 
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light" style="padding: 20px;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">SportsHub</a>
+    <a class="navbar-brand" href="/contactus">SportsHub</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,7 +15,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <a href="aboutus" class="nav-link">About Us</a>
         </li>
         </ul>
    
@@ -44,6 +44,7 @@
     @else
     <ul class="navbar-nav mr-auto ">
       <li><a class="header-login" href="/login">Login</a></li>
+      <li><a class="header-login" href="/register">Register</a></li>
       </ul>
 
     @endif

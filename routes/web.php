@@ -19,6 +19,9 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/aboutus',[ProductController::class,'aboutUs']);
+Route::get('/contactus',[ProductController::class,'contactUs']);
+
 
 Route::post('/login',[UserController::class,'login']);
 
@@ -35,4 +38,9 @@ Route::get('/logout', function () {
 });
 
 Route::get('removecart/{id}',[ProductController::class,'removeCart']);
+Route::get('ordernow',[ProductController::class,'orderNow']);
+
+Route::view('/register','register');
+Route::post('/register',[UserController::class,'register']);
+
 
