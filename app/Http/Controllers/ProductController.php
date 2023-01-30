@@ -84,6 +84,18 @@ class ProductController extends Controller
     {
         return view('contactus');
     }
+    //for admin to add products if he wish
+    function addproduct(Request $req){
+    $product = new Product;
+    $product->name=$req->name;
+    $product->price=$req->price;
+    $product->category=$req->category;
+    $product->description=$req->description;
+    $product->gallery=$req->gallery;
+    $product->save();
+    return redirect('/adminaddproduct');
+
+}
 }
 
 

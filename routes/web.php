@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ProductController;
 use \App\Http\Controllers\UserController;
+use \App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,5 +43,30 @@ Route::get('ordernow',[ProductController::class,'orderNow']);
 
 Route::view('/register','register');
 Route::post('/register',[UserController::class,'register']);
+
+
+//admin part start here
+Route::get('/adminlogin', function () {
+    return view('adminlogin');
+});
+Route::post('/adminlogin',[AdminController::class,'adminlogin']);
+
+
+Route::view('/admindashboard','admindashboard');
+Route::view('/adminuserscontrol','adminuserscontrol');
+
+Route::view('/adminaddmember','adminaddmember');
+Route::post('/addmember',[UserController::class,'addmember']);
+//Route::view('/admindeleteuser','admindeleteuser');
+
+Route::get('/admindeleteuser',[UserController::class,'deleteuser']);
+Route::get('/delete/{id}',[UserController::class,'delete']);
+
+//for products
+Route::view('/adminproductscontrol','adminproductscontrol');
+
+Route::view('/adminaddproduct','adminaddproduct');
+Route::post('/addproduct',[ProductController::class,'addproduct']);
+
 
 

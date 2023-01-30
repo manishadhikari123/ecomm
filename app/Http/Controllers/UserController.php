@@ -21,6 +21,7 @@ class UserController extends Controller
         return redirect('/login');
     }
 
+    //test
     function login1(Request $req)
     {
         $user= User::where(['email'=>$req->email])->first();
@@ -34,6 +35,7 @@ class UserController extends Controller
         }
     }
 
+    //login
     public function login(Request $req)
     {
         $user= User::where(['email'=>$req->email,'password'=>$req->password])->first();
@@ -45,5 +47,28 @@ class UserController extends Controller
             $req->session()->put('user',$user);
             return redirect('/');
         }
+    }
+    
+    //for admin to add users if he wish
+    function addmember(Request $req){
+        $user = new User;
+        $user->name=$req->name;
+        $user->email=$req->email;
+        $user->password=$req->password;
+        $user->save();
+        return redirect('/adminaddmember');
+
+    }
+//for admin to delete users, use $id to delete by seperate id
+    function deleteuser()
+    {
+        $data = User::all();
+        return view('admindeleteuser',['users'=>$data]);
+    }
+    function delete($id)
+    {
+        $data = User::find($id);
+        $data->delete();
+        return redirect('admindeleteuser');
     }
 }
