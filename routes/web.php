@@ -53,6 +53,8 @@ Route::post('/adminlogin',[AdminController::class,'adminlogin']);
 
 
 Route::view('/admindashboard','admindashboard');
+
+//for user
 Route::view('/adminuserscontrol','adminuserscontrol');
 
 Route::view('/adminaddmember','adminaddmember');
@@ -60,7 +62,7 @@ Route::post('/addmember',[UserController::class,'addmember']);
 //Route::view('/admindeleteuser','admindeleteuser');
 
 Route::get('/admindeleteuser',[UserController::class,'deleteuser']);
-Route::get('/delete/{id}',[UserController::class,'delete']);
+Route::get('/delete/{id}',[UserController::class,'delete1']);
 
 //for products
 Route::view('/adminproductscontrol','adminproductscontrol');
@@ -68,5 +70,18 @@ Route::view('/adminproductscontrol','adminproductscontrol');
 Route::view('/adminaddproduct','adminaddproduct');
 Route::post('/addproduct',[ProductController::class,'addproduct']);
 
+Route::get('/admindeleteproduct',[ProductController::class,'deleteproduct']);
+Route::get('/delete/{id}',[ProductController::class,'delete2']);
+
+//for edit product
+Route::get('/edit/{id}',[ProductController::class,'editData']);
+Route::post('/editProduct',[ProductController::class,'updateproduct']);
+
+
+//for adminlogout
+Route::get('/adminlogout', function () {
+    Session::forget('admin');
+    return redirect('adminlogin');
+});
 
 

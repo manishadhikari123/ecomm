@@ -65,10 +65,12 @@ class UserController extends Controller
         $data = User::all();
         return view('admindeleteuser',['users'=>$data]);
     }
-    function delete($id)
+    function delete1($id)
     {
-        $data = User::find($id);
-        $data->delete();
+        $data1 = User::find($id);
+        $data1->delete();
         return redirect('admindeleteuser');
     }
+
+    
 }

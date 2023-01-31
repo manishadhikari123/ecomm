@@ -73,6 +73,7 @@
           <div class="trending-item" style="padding:20px;">
                     <a href="detail/{{$item['id']}}">
                         <img class="trending-image" src="{{$item['gallery']}}">
+
                     <div class="">
                         <h5>{{$item['name']}}</h5>
                     </div>

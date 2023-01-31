@@ -95,7 +95,42 @@ class ProductController extends Controller
     $product->save();
     return redirect('/adminaddproduct');
 
-}
+    }
+
+    //for delete process of products from admin side
+    function deleteproduct()
+    {
+        $data = Product::all();
+        return view('admindeleteproduct',['products'=>$data]);
+    }
+
+    function delete2($id)
+    {
+        $data2 = Product::find($id);
+        $data2->delete();
+        return redirect('admindeleteproduct');
+    }
+
+    //for editing product
+    function editData($id)
+    {
+        $data = Product::find($id);
+        return view('admineditproduct',['data'=>$data]);
+    }
+
+    function updateproduct(Request $req)
+    {
+        $data = Product::find($req->id);
+        $data->name=$req->name;
+        $data->price=$req->price;
+        $data->category=$req->category;
+        $data->description=$req->description;
+        $data->gallery=$req->gallery;
+        $data->save();
+
+        return redirect('admindeleteproduct');
+    }
+
 }
 
 
