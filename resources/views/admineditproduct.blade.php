@@ -21,7 +21,6 @@
             <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">gallery</label><br>
                 <input type="file" name="gallery" class="" id="exampleInputEmail1" placeholder="upload an image">
-               <h3>Or, give url</h3> <input type="text" name="gallery" class="" id="exampleInputEmail1" value="{{$data['gallery']}}" placeholder="give url of an image"><br>
 
             </div>
 

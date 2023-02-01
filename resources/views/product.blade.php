@@ -3,38 +3,41 @@
 
 <body style="background-color:powderblue;">
 <div class="custom-product" >
-    <div id="imageCarousel" style="padding:20px;" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-        @foreach($products as $value)
-                <li data-target="#imageCarouselIndicator" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-        @endforeach
-  </ol>
-      
-        <!-- Wrapper for slides -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 
-        <div class="carousel-inner">
-            @foreach ($products as $item)
-                <div class="carousel-item {{ $loop->first ? 'active':''}}">
-                    <a href="detail/{{$item['id']}}">
-                        <center><img class="slider-img" src="{{$item['gallery']}}"><center>
-                    <div class="carousel-caption slider-text">
-                        <h3>{{$item['name']}}</h3>
-                        <p>{{$item['description']}}</p>
-                    </div>
-                    
-                    </a>
-                </div>
-    
-          @endforeach
-        </div>
-      </div>
-      
-        
-      </div>
-      
-      </div>
+    <div class="container-fluid" >
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+
+    <div class="carousel-item active" style="height:400px; width:100%;">
+    @foreach($products as $item)
+
+      <img class="d-block w-100" src="{{asset('images/'.$item['gallery'])}}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{asset('images/'.$item['gallery'])}}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{asset('images/slider/'.$item['gallery'])}}" alt="Third slide">
+      @endforeach
+
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+    </div>
       <div class="container">
 
       <p class="container"  style="font-family:courier; padding:20px; font-size:160%; text-align:center;" >
@@ -72,7 +75,7 @@
         @foreach($products as $item)
           <div class="trending-item" style="padding:20px;">
                     <a href="detail/{{$item['id']}}">
-                        <img class="trending-image" src="{{$item['gallery']}}">
+                        <img class="trending-image" src="{{asset('images/'.$item['gallery'])}}">
 
                     <div class="">
                         <h5>{{$item['name']}}</h5>

@@ -17,6 +17,23 @@
         <li class="nav-item">
           <a href="aboutus" class="nav-link">About Us</a>
         </li>
+
+        <li>
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            category
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">football</a>
+            <a class="dropdown-item" href="#">cricket</a>
+            <a class="dropdown-item" href="#">badminton</a>
+            <a class="dropdown-item" href="#">table Tennis</a>
+            <a class="dropdown-item" href="#">volleyball</a>
+
+          </div>
+        </div>
+
+        </li>
         </ul>
    
         <form action="/search" class="d-flex" role="search">

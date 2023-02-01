@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <img class="detail-img" src="{{$product['gallery']}}" alt="">
+            <img class="detail-img" src="{{asset('images/'.$product['gallery'])}}" alt="">
         </div>
         <div class="col-sm-6">
             <a href="/"> Go Back </a>

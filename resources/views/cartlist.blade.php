@@ -14,7 +14,7 @@
                 <div class="row searched-item cart-list-divider">
                     <div class="col-sm-4">
                         <a href="detail/{{$item->id}}">
-                            <img class="trending-image-cartlist" src="{{$item->gallery}}">
+                            <img class="trending-image-cartlist" src="{{asset('images/'.$item->gallery)}}">
                             
                     
                         </a>
@@ -27,7 +27,7 @@
                     
                     </div>
                     <div class="col-sm-2">
-                        <a href="/removecart/{{$item->cart_id}}" class="btn btn-warning">Remove to Cart</a>
+                        <a href="/removecart/{{$item->cart_id}}" class="btn btn-warning">Remove From Cart</a>
                     </div>
                     
                 </div>

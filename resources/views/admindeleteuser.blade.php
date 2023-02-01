@@ -13,7 +13,7 @@
         <td>{{$item['id']}}<td>
         <td>{{$item['name']}}<td>
         <td>{{$item['email']}}<td>
-        <td><a href={{"delete/".$item['id']}}>Delete</button></td>
+        <td><a href={{"deleteuser/".$item['id']}}>Delete</button></td>
     </tr>
 @endforeach
 
