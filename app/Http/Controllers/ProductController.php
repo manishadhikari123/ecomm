@@ -15,13 +15,20 @@ class ProductController extends Controller
     //
     function index()
     {
+        //$data= Product::all();
+        //return view('product',['products'=>$data]);
         $data= Product::all();
-        return view('product',['products'=>$data]);
+        $cat = Product::select('category')->distinct()->get();
+        return view('/product',['products'=>$data, 'category'=>$cat]);
+        
     }
+    
     function detail($id)
     {
         $data= Product::find($id);
-        return view('detail',['product'=>$data]);
+        $cat = Product::select('category')->distinct()->get();
+
+        return view('detail',['product'=>$data,'category'=>$cat]);
     }
     function search(Request $req)
     {
@@ -131,6 +138,17 @@ class ProductController extends Controller
         return redirect('admindeleteproduct');
     }
 
+    //for categories with different pages
+    //first for showing categories list , when selection categories option
+   
+    
+
+    function categoryPro($cat_name){
+        $data = Product::all()->where('category',$cat_name);
+        $cat = Product::select('category')->distinct()->get();
+        return view('/category_product',['products'=>$data, "category"=>$cat, 'heading'=>$cat_name]);
+    }
+    
 }
 
 

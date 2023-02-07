@@ -13,8 +13,8 @@
         <form action="/register" method="POST">
             @csrf
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">User Name</label>
-                <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="User Name">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter your Name">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>

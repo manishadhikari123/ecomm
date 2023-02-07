@@ -43,7 +43,7 @@
  
             <button type="submit" class="btn btn-primary">Add product</button>
         </form>
-        <a href="/adminuserscontrol"> Go Back to Control User</a><br>
+        <a href="/adminproductscontrol"> Go Back to Control products</a><br>
 
 </div>
 </body>

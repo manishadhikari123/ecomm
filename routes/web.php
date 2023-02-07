@@ -84,4 +84,6 @@ Route::get('/adminlogout', function () {
     return redirect('adminlogin');
 });
 
+//for category
 
+Route::get('/product/category/{category}',[ProductController::class,'categoryPro']);

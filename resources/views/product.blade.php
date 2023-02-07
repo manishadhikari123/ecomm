@@ -2,43 +2,43 @@
 @section("content")
 
 <body style="background-color:powderblue;">
-<div class="custom-product" >
+  <div class="custom-product" >
 
     <div class="container-fluid" >
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
+        <ol class="carousel-indicators" >
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <center>
+        <div class="carousel-inner" style="height:400px; width:60%; padding: 20px;">
+          @foreach($products as $item)
+          <a href="detail/{{$item['id']}}">
+          <div class="carousel-item active" >
+            <img class="d-block w-100" src="{{asset('images/slider/'.$item['gallery'])}}" alt="First slide">
+          </div>
+          </a>
+          
+          @endforeach
+        </div>
+        </center>
 
-    <div class="carousel-item active" style="height:400px; width:100%;">
-    @foreach($products as $item)
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
 
-      <img class="d-block w-100" src="{{asset('images/'.$item['gallery'])}}" alt="First slide">
+      </div>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('images/'.$item['gallery'])}}" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('images/slider/'.$item['gallery'])}}" alt="Third slide">
-      @endforeach
+    
 
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 
-</div>
-    </div>
-      <div class="container">
+    <div class="container">
 
       <p class="container"  style="font-family:courier; padding:20px; font-size:160%; text-align:center;" >
       Welcome to our sports website, where we offer a wide selection of high-quality sports equipment and apparel for athletes of all levels. 
@@ -64,7 +64,7 @@
         our audience with the most relevant and useful information. Our goal is to provide a space where the sports community in Biratnagar can come together to share their passion for sports.
       </p>
 
-      </div>
+    </div>
 
 
 
@@ -87,6 +87,6 @@
 
       </div>
 
-</div>
+  </div>
 </body>
 @endsection
