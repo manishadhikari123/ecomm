@@ -20,12 +20,24 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" name="password" class="form-control" id="password">
+                <button type="button" class="btn btn-primary" onclick="togglePassword()">Show Password </button>
+
             </div>
  
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
         </div>
     </div>
+    <script>
+function togglePassword() {
+  var passwordInput = document.getElementById("password");
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+  } else {
+    passwordInput.type = "password";
+  }
+}
+</script>
 </div>
 @endsection
