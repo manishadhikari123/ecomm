@@ -87,3 +87,15 @@ Route::get('/adminlogout', function () {
 //for category
 
 Route::get('/product/category/{category}',[ProductController::class,'categoryPro']);
+
+
+//for same email repeated
+Route::post('/check-email', function (Request $request) {
+    $email = $request->input('email');
+  
+    if (User::where('email', $email)->exists()) {
+      return 'taken';
+    }
+  
+    return 'available';
+  });

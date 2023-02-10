@@ -13,10 +13,10 @@
 </head>
 <body style="background-color:powderblue;">
     
-<! -- heading starts here -->
-<nav class="navbar navbar-expand-lg bg-light" style="padding: 20px; ">
+    <! -- heading starts here -->
+    <nav class="navbar navbar-expand-lg bg-light" style="padding: 20px; ">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/contactus">
+        <a class="navbar-brand" href="/">
             SportsHub
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@
   
                 @if(Session::has('user'))
                 <ul class="navbar-nav mr-auto ">
-                    <li class="header-cart">
+                    <li class="header-cart" style="margin-top: 7.5px;">
                         <a  href="/cartlist">cart</a>
                     </li>
                 

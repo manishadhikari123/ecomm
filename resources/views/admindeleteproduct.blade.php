@@ -20,7 +20,7 @@
         <td>{{$item['price']}}<td>
         <td>{{$item['category']}}<td>
         <td>{{$item['description']}}<td>
-        <td>{{$item['gallery']}}<td>
+        <td><img class="trending-admin-image" style="height: 150px; width: 150px;"  src="{{asset('images/'.$item['gallery'])}}"><td>
         <td><a href={{"delete/".$item['id']}}>Delete</button></td>
         <td><a href={{"edit/".$item['id']}}>Edit</button></td>
 

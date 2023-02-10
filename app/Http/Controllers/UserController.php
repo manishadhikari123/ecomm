@@ -12,6 +12,9 @@ class UserController extends Controller
     //
     function register(Request $req)
     {
+        $validatedata = $req->validate([
+            'email' => 'required|unique:users',
+        ]);
         $user = new User;
         $user->name = $req->name;
         $user->email = $req->email;

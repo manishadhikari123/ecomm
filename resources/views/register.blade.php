@@ -19,12 +19,15 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" placeholder="Email" id="email" required >
+                <input type="email" name="email" class="form-control" placeholder="Email" id="email"  required >
+                <span id="email-error"></span>
                 <div  class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="password" required>
+                <input type="password" name="password" class="form-control" id="password" onchange="valtext()" required>
+                <button type="button" class="btn btn-primary" onclick="togglePassword()">Show Password </button>
+
             </div>
  
             <button type="submit" class="btn btn-primary" onclick="return validateForm()">Register</button>
@@ -60,7 +63,19 @@
 
             //validate password
             var z = document.getElementById("password").value;
-            var passwordPattern = /^.{8,}$/;
+            var passwordPattern = /^[a-zA-Z0-9]{8,}$/;
+            if (!passwordPattern.test(z)) {
+                alert("Password must contain at least 8 characters");
+                return false;
+            }
+
+            return true;
+
+            
+        }
+        funtion valtext(){
+          var z = document.getElementById("password").value;
+            var passwordPattern = /^[a-zA-Z0-9]{8,}$/;
             if (!passwordPattern.test(z)) {
                 alert("Password must contain at least 8 characters");
                 return false;
@@ -70,7 +85,13 @@
         }
 
 
+
+        //for same email
+     
+  
+
 </script>
+
 
 
 
