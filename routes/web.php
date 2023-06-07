@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ProductController;
 use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\AdminController;
+use \App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,11 @@ use \App\Http\Controllers\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/login', function () {
     return view('login');
+});
+Route::get('/login1', function () {
+    return view('login1');
 });
 
 Route::get('/aboutus',[ProductController::class,'aboutUs']);
@@ -25,8 +28,11 @@ Route::get('/contactus',[ProductController::class,'contactUs']);
 
 
 Route::post('/login',[UserController::class,'login']);
+Route::post('/login1',[UserController::class,'login1']);
+
 
 Route::get('/',[ProductController::class,'index']);
+
 Route::get('/detail/{id}',[ProductController::class,'detail']);
 Route::get('/search',[ProductController::class,'search']);
 Route::post('/add_to_cart',[ProductController::class,'addToCart']);
@@ -39,7 +45,12 @@ Route::get('/logout', function () {
 });
 
 Route::get('removecart/{id}',[ProductController::class,'removeCart']);
+
 Route::get('ordernow',[ProductController::class,'orderNow']);
+Route::post('orderplace',[ProductController::class,'orderPlace']);
+Route::get('myorders',[ProductController::class,'myOrders']);
+
+
 
 Route::view('/register','register');
 Route::post('/register',[UserController::class,'register']);
@@ -56,6 +67,7 @@ Route::view('/admindashboard','admindashboard');
 
 //for user
 Route::view('/adminuserscontrol','adminuserscontrol');
+
 
 Route::view('/adminaddmember','adminaddmember');
 Route::post('/addmember',[UserController::class,'addmember']);
@@ -76,6 +88,11 @@ Route::get('/delete/{id}',[ProductController::class,'delete2']);
 //for edit product
 Route::get('/edit/{id}',[ProductController::class,'editData']);
 Route::post('/editProduct',[ProductController::class,'updateproduct']);
+
+//for admin-order page
+Route::view('/admin-orderinfo','admin-orderinfo');
+Route::get('/admin-orderinfo',[AdminController::class,'show']);
+
 
 
 //for adminlogout
@@ -99,3 +116,13 @@ Route::post('/check-email', function (Request $request) {
   
     return 'available';
   });
+
+  //Route::post('/sort',[ProductController::class,'sort'])->name('sort');
+  Route::post('/sort/{cat_name?}', [ProductController::class, 'sort'])->name('sort');
+
+  /*-----------------------------Payment Routes-----------------------------------------*/
+
+Route::post('/pay', [PaymentController::class, 'pay'])->name('pay');
+Route::get('/success', [PaymentController::class, 'paySuccess']);
+Route::get('/failure', [PaymentController::class, 'payFailure']);
+Route::get('/payment/{product}', [PaymentController::class, 'index'])->name('product.payment');

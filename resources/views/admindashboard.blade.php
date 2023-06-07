@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,28 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce Project</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <style>
+        .btn-success{
+            padding:10px;
+            margin:20px;
+            width:250px;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        .dash-head{
+            padding:50px;
+            margin:10px;
+        }
+        .dash-buttons{
+            margin:15px 0 0 600px;
+        }
+    </style>
 </head>
 <body>
-
-
-
-<center><h1>Admin Dashboard</h1></center>
-
-
-<a href="/adminuserscontrol" class="btn btn-success" ">Control Users</a><br>
-<a href="/adminproductscontrol" class="btn btn-success" >Control Products</a><br>
-<a href="/adminlogout" class="btn btn-success" ">Logout from adminpanel</a><br>
-    
-
+    <div class="dash-head">
+        <center><h1><b>ADMIN DASHBOARD</b></h1></center>
+    </div>
+    <div class="dash-buttons">
+        <a href="/adminproductscontrol" class="btn btn-success">Control Products</a><br>
+        <a href="/admin-orderinfo" class="btn btn-success">Order Information</a><br>
+        <a href="/adminuserscontrol" class="btn btn-success">Control Users</a><br>
+        <a href="/adminlogout" class="btn btn-success">Logout From Adminpanel</a><br>
+    </div>
 </body>
-<style>
-    .btn-success{
-        padding:10px;
-        margin:10px;
-    }
-</style>
-
 </html>
